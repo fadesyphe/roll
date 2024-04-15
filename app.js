@@ -6,8 +6,13 @@ let windowInnerHeight = window.innerHeight;
 window.addEventListener("resize", () => {
 	windowInnerWidth = window.innerWidth;
 	windowInnerHeight = window.innerHeight;
+	randomPosition
 })
-buttonRoll.addEventListener("click", (e) => {
+
+buttonRoll.addEventListener("click", randomPosition)
+buttonRoll.addEventListener("contextmenu", randomPosition)
+
+function randomPosition() {
 	wrapper.style.left = Math.random() * windowInnerWidth + 'px';
 	wrapper.style.top = Math.random() * windowInnerHeight + 'px';
 	console.log(wrapper.style.left)
@@ -23,4 +28,4 @@ buttonRoll.addEventListener("click", (e) => {
 	} else if (wrapper.style.top + 'px' < 150 + 'px') {
 		wrapper.style.top = 150 + 'px'
 	}
-})
+}
